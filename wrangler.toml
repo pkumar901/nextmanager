@@ -1,0 +1,29 @@
+name = "nextmanager"
+main = "src/index.ts"
+compatibility_date = "2024-12-16"
+
+[env.production]
+routes = [
+  {
+    pattern = "nextmanager.dev",
+    zone_name = "nextmanager.dev"
+  }
+]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "nextmanager"
+database_id = "YOUR_D1_DATABASE_ID"
+
+[env.production.d1_databases]
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "nextmanager"
+database_id = "YOUR_PRODUCTION_D1_DATABASE_ID"
+
+[build]
+command = "npm run build"
+cwd = "."
+
+[build.upload]
+format = "service-worker"
